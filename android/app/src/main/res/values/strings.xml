@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SalesSystem</string>
+    <string name="title_activity_main">SalesSystem</string>
+    <string name="package_name">com.salessystem.app</string>
+    <string name="custom_url_scheme">com.salessystem.app</string>
+</resources>

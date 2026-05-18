@@ -1,0 +1,8 @@
+{
+  "name": "نظام المبيعات المتكامل",
+  "description": "نظام متكامل لإدارة المبيعات، المخزون، ونقاط البيع مع تقارير لوحة التحكم.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --color-primary: #2563eb;
+  --color-sidebar: #0f172a;
+}
+
+@layer base {
+  body {
+    @apply antialiased text-slate-900 bg-gray-100;
+  }
+}
+
+@layer utilities {
+  .data-grid-header {
+    @apply text-[11px] font-bold text-gray-500 uppercase tracking-wider border-b-2 border-gray-200 py-2 px-3;
+  }
+  
+  .data-grid-row {
+    @apply text-[13px] border-b border-gray-100 transition-colors hover:bg-gray-50;
+  }
+
+  .status-pill {
+    @apply px-2 py-0.5 rounded text-[11px] font-bold uppercase;
+  }
+
+  .stat-card {
+    @apply bg-white border border-gray-200 p-3 rounded-lg shadow-sm;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-lg;
+  }
+  
+  @keyframes progress {
+    from { width: 100%; }
+    to { width: 0%; }
+  }
+
+  .animate-progress {
+    animation: progress linear forwards;
+  }
+}

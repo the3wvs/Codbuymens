@@ -1,0 +1,76 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A product in the inventory.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "The name of the product." },
+        "description": { "type": "string", "description": "A brief description." },
+        "price": { "type": "number", "description": "Retail selling price." },
+        "wholesalePrice": { "type": "number", "description": "Wholesale price." },
+        "stock": { "type": "number", "description": "Current stock level." },
+        "category": { "type": "string", "description": "Category ID." },
+        "barcode": { "type": "string", "description": "Product barcode." },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "price", "stock"]
+    },
+    "Sale": {
+      "title": "Sale",
+      "description": "A sales transaction.",
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "description": "List of items sold."
+        },
+        "total": { "type": "number", "description": "Total amount." },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string", "description": "ID of the staff member." },
+        "customerName": { "type": "string", "description": "Optional customer name." }
+      },
+      "required": ["items", "total", "timestamp", "userId"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product category.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" }
+      },
+      "required": ["name"]
+    },
+    "User": {
+      "title": "User",
+      "description": "System user profile.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "staff"] },
+        "profileImageUrl": { "type": "string" }
+      },
+      "required": ["name", "email", "role"]
+    }
+  },
+  "firestore": {
+    "users": {
+      "schema": "User",
+      "description": "User profiles and roles."
+    },
+    "users/{userId}/products": {
+      "schema": "Product",
+      "description": "Inventory products collection for a specific user."
+    },
+    "users/{userId}/sales": {
+      "schema": "Sale",
+      "description": "Sales transactions history for a specific user."
+    },
+    "users/{userId}/categories": {
+      "schema": "Category",
+      "description": "Product categories for a specific user."
+    }
+  }
+}
